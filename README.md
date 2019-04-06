@@ -20,9 +20,9 @@
 It actually help patients to get an appointment with his/her doctor online. Doctor also can see how many patients are scheduled for a day. It also tracks patient profile. 
 
 ## Screenshots
-![Login Page](img/login_page.png)
-![Appointment Page](img/appointment_page.png)
-![Doctor's Page.png](img/doctors_page.png)
+![login_page](img/login_page.png)
+![appointment_page](/src/img/appointment_page.png)
+![doctors_page](img/doctors_page.png)
 ![ERD](img/ERD.png)
 
 
