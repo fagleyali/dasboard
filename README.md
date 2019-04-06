@@ -21,7 +21,7 @@ It actually help patients to get an appointment with his/her doctor online. Doct
 
 ## Screenshots
 ![login_page](img/login_page.png)
-![appointment_page](/src/img/appointment_page.png)
+![appointment_page](./img/appointment_page.png)
 ![doctors_page](img/doctors_page.png)
 ![ERD](img/ERD.png)
 
