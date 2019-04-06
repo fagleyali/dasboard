@@ -1,68 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DAS BOARD
+##### This app is for making appointment schedule with the listed docotors of different segment. Doctors and patients are the main users of this app. 
 
-## Available Scripts
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Links](#links)
+* [RESTful API endpoints](#RESTful_API)
+* [Problems](#problems)
+* [Future enhancement](#futures)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-In the project directory, you can run:
+## General info
+It actually help patients to get an appointment with his/her doctor online. Doctor also can see how many patients are scheduled for a day. It also tracks patient profile. 
 
-### `npm start`
+## Screenshots
+![Login Page](./img/Login page.png)
+![Appointment Page](./img/Appointment Page.png)
+![Doctor's Page.png](./img/Doctor's Page.png)
+![ERD](./img/ERD.png)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Technologies
+* HTML5, JavaScript ES6, CSS3, 
+* Mongoose - version
+* Express.Js - version 2.0
+* React.JS - version 11.0
+* Node.Js - version 
 
-### `npm test`
+## Links
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [pitch-deck](https://github.com/fagleyali/dasboard)
+* [trello](https://trello.com/b/UEm5OT2v/das-board)
+* [Heroku](https://id.heroku.com/login)
 
-### `npm run build`
+## RESTful_API
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+RESTful API documentation.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Project Challenges
+1. Time: Time is very short to build up a full stack web application by a group of new developers. 
+2. Github: Its getting on our nerves to resolve conflicts with .pyc. But learned a lot of these. 
+3. APIs: We searched for APIs to use, but didn't find any related things.
+4. Migrations: Model designing should be carefully crafted before starting coding.
+5. Heroku migrations: Another problem we found to migrate the modified model in the heroku. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
+This app has some cool features! Such as:
+1. There should three types of user, such as: Doctors, Patients and Admin
+2. We used one to one relation and many to many relation.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Futures
+There are a lot of thing we can do if we have some time
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Setup
+Describe how to install / setup your local environement / add link to demo version.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Code Examples
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## To-do list:
+* to make presentable front-end design
+* to choose Api for our project
+* to make all skeleton components
+* to make install Express, Node and Mongoose 
+* to implement three types role based users authentication
+* to deploy the completed project in Heroku
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Status
+Project is: pre project work just started. We are preparing the set up for the project, collecting accessories, images, apis. 
 
-### Code Splitting
+## Inspiration
+Add here credits. Project inspired by #GENERAL ASSEMBLY#
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contact
+Created by [@DATX team]- feel free to contact us!
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
