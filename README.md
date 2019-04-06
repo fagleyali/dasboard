@@ -1,4 +1,5 @@
-# DAS BOARD
+# DAS BOARD [logo](img/logo.png)
+
 ##### This app is for making appointment schedule with the listed docotors of different segment. Doctors and patients are the main users of this app. 
 
 ## Table of contents
@@ -19,10 +20,10 @@
 It actually help patients to get an appointment with his/her doctor online. Doctor also can see how many patients are scheduled for a day. It also tracks patient profile. 
 
 ## Screenshots
-![Login Page](./img/Login page.png)
-![Appointment Page](./img/Appointment Page.png)
-![Doctor's Page.png](./img/Doctor's Page.png)
-![ERD](./img/ERD.png)
+![Login Page](img/login_page.png)
+![Appointment Page](img/appointment_page.png)
+![Doctor's Page.png](img/doctors_page.png)
+![ERD](img/ERD.png)
 
 
 ## Technologies
