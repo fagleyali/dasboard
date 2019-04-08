@@ -1,5 +1,6 @@
 ![logo](img/logo.png)
 
+## DOCTORS APPOINTMENT SCHEDULER BOARD
 ##### This app is for making appointment schedule with the listed docotors of different segment. Doctors and patients are the main users of this app. 
 
 ## Table of contents
