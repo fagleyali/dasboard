@@ -1,4 +1,4 @@
-# DAS BOARD [logo](img/logo.png)
+# DAS BOARD ![logo](img/logo.png)
 
 ##### This app is for making appointment schedule with the listed docotors of different segment. Doctors and patients are the main users of this app. 
 
