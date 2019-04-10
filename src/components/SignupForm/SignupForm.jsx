@@ -2,14 +2,29 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../utils/userService';
 
+
 class SignupForm extends Component {
 
   state = {
     name: '',
     email: '',
     password: '',
-    passwordConf: ''
+    passwordConf: '',
+    role:'default',
+    isDoctor: false
   };
+
+  handleIsDoctor = () => {
+      if (this.state.role === 'doctor'){
+        this.setState({ isDoctor: true})
+        
+      } else {
+        this.setState({ isDoctor: false })
+        
+      }
+    }
+
+  
 
   handleChange = (e) => {
     this.props.updateMessage('');
@@ -19,6 +34,7 @@ class SignupForm extends Component {
     });
   }
 
+
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,6 +42,7 @@ class SignupForm extends Component {
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage
+      
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)
@@ -34,11 +51,13 @@ class SignupForm extends Component {
   }
 
   isFormInvalid() {
-    return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf);
+    return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf && this.state.role);
   }
 
   render() {
+    
     return (
+   
       <div>
         <header className="header-footer">Sign Up</header>
         <form className="form-horizontal" onSubmit={this.handleSubmit} >
@@ -63,6 +82,15 @@ class SignupForm extends Component {
             </div>
           </div>
           <div className="form-group">
+            <div className="col-sm-12">
+              <select className="form-control" value={this.state.role}  name="role" onChange={this.handleChange}>
+                <option value='admin'>Admin</option>
+                <option value='doctor'>Doctor</option>
+                <option value='default' >Default</option>
+            </select>
+            </div>
+          </div>
+          <div className="form-group">
             <div className="col-sm-12 text-center">
               <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
@@ -70,6 +98,7 @@ class SignupForm extends Component {
           </div>
         </form>
       </div>
+    
     );
   }
 };
