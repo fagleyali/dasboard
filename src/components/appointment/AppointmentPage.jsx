@@ -1,18 +1,36 @@
 import React from 'react';
 import NavBar  from '../Navbar/navbar';
 
-const AppointmentPage = props => {
+import AppointmentForm from '../appointment/AppointmentForm';
 
-    return (
-        <div>
-            <h1>Appointment Page</h1>
-            <NavBar
-                user={props.user}
-                handleLogout={props.handleLogout}
-            />
-        </div>
-        
-    )
+
+class AppointmentPage extends React.Component {
+    constructor(props){
+        super(props)
+    }
+
+    
+
+    render(){
+
+
+        return (
+            <div>
+                <h1>Appointment Page</h1>
+                
+                <NavBar
+                    user={this.props.user}
+                    handleLogout={this.props.handleLogout}
+                />
+                
+                <AppointmentForm  />
+
+    
+                
+            </div>
+            
+        )
+    }
 }
 
 export default AppointmentPage;

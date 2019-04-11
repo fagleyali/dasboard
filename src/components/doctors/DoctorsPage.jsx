@@ -1,14 +1,5 @@
 import React from 'react';
-import DoctorsSignupForm from '../../components/DoctorsSignupForm/DoctorsSignupForm'
-import PrivateRoute from '../../components/PrivateRouter/PrivateRoute';
 import { Link } from 'react-router-dom';
-
-const errmsg = ''
-
-const updateMessage = (msg)=>{
-   errmsg = msg;
-   return errmsg;
-};
 
 const DoctorsPage = props => {
     return(

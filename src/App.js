@@ -8,7 +8,9 @@ import userService from './utils/userService';
 import LoginPage from './pages/LoginPage/LoginPage';
 import PrivateRoute from './components/PrivateRouter/PrivateRoute';
 import DoctorsSignupPage from './pages/DoctorsSignupPage/DoctorsSignupPage';
-import DoctorsSignupForm from './components/DoctorsSignupForm/DoctorsSignupForm';
+import {SingleDatePicker} from 'react-dates';
+
+
 
 class App extends Component {
   constructor(){
@@ -57,7 +59,12 @@ class App extends Component {
           }>
           </Route>
           <PrivateRoute user={this.state.user} exact path='/doctors' component={DoctorsPage} />
-          <Route exact path="/doctors/signup" component={DoctorsSignupForm} />
+          
+          <Route user={this.state.user} exact path="/doctors/signup" render={({history})=>
+          <DoctorsSignupPage 
+          history = {history}/>
+          }
+          />
           <Route exact path='/signup' render={({history})=>
               <SignUpPage 
               history={history}

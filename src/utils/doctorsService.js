@@ -4,7 +4,8 @@ const BASE_URL = '/api/doctors/';
 
 export default {
   // index,
-  create
+  create,
+  getDoctors
 };
 
 // function index() {
@@ -16,6 +17,16 @@ export default {
 //   };
 //   return fetch(BASE_URL, options).then(res => res.json());
 // }
+
+function getDoctors(dept) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + tokenService.getToken()
+    }
+  };
+  return fetch(BASE_URL  + dept, options).then(res => res.json());
+}
 
 function create(doctor) {
   const options = {
