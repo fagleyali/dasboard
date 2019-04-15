@@ -16,14 +16,17 @@ class AppointmentPage extends React.Component {
 
         return (
             <div>
-                <h1>Appointment Page</h1>
-                
                 <NavBar
                     user={this.props.user}
                     handleLogout={this.props.handleLogout}
                 />
+                <h3>Make an appointmnet</h3>
                 
-                <AppointmentForm  />
+                
+                <AppointmentForm 
+                history={this.props.history} 
+                handleUpdateAppointment={this.props.handleUpdateAppointment}
+                />
 
     
                 

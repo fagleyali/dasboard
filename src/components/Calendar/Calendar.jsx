@@ -19,7 +19,7 @@ import './Calendar.css';
 
     }
 
-    dayshour = [8,8.30,9,9.30];
+    
     weekdays = moment.weekdays(); //["Sunday", "Monday", "Tuesday", "Wednessday", "Thursday", "Friday", "Saturday"]
     weekdaysShort = moment.weekdaysShort(); // ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     months = moment.months();
@@ -168,11 +168,16 @@ import './Calendar.css';
         this.setState({
             selectedDay: day
         }, () => {
-            console.log("SELECTED DAY: ", this.state.selectedDay);
+            console.log("SELECTED DAY: ", this.year()+" "+this.month()+" "+this.state.selectedDay);
+            const selectedDate=(this.year()+" "+this.month()+" "+this.state.selectedDay);
+            this.props.handleAppDate(selectedDate);
+
         });
 
         this.props.onDayClick && this.props.onDayClick(e, day);
     }
+
+
 
     render() {
         // Map the weekdays i.e Sun, Mon, Tue etc as <td>

@@ -5,7 +5,8 @@ const BASE_URL = '/api/doctors/';
 export default {
   // index,
   create,
-  getDoctors
+  getDoctors,
+  getDoctor
 };
 
 // function index() {
@@ -25,7 +26,17 @@ function getDoctors(dept) {
       'Authorization': 'Bearer ' + tokenService.getToken()
     }
   };
-  return fetch(BASE_URL  + dept, options).then(res => res.json());
+  return fetch(BASE_URL + dept, options).then(res => res.json());
+}
+
+function getDoctor(doctorId) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + tokenService.getToken()
+    }
+  };
+  return fetch(BASE_URL + doctorId, options).then(res => res.json());
 }
 
 function create(doctor) {
@@ -40,4 +51,6 @@ function create(doctor) {
   };
   return fetch(BASE_URL + 'signup', options).then(res => res.json());
 }
+
+
 

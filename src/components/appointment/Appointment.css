@@ -1,0 +1,14 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.flex-container > div {
+    
+    width: 800px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 15px;
+  }

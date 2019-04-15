@@ -32,15 +32,11 @@ class DoctorsSignupForm extends Component {
         e.preventDefault();
         try {
           await doctorsService.create(this.state);
-          // Let <App> know a user has signed up!
-          // this.props.handleSignupOrLogin();
-          // Successfully signed up - show GamePage
           this.props.history.push('/doctors');
           
         } catch (err) {
           console.log(err)
-          // Invalid user data (probably duplicate email)
-          // this.props.updateMessage(err.message);
+          
         }
       }
     

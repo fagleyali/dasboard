@@ -1,5 +1,6 @@
 const mongoose =  require ('mongoose');
-mongoose.connect('mongodb://localhost/dasboard', {useNewUrlParser:true});
+
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/dasboard', {useNewUrlParser:true});
 
 const db = mongoose.connection;
 

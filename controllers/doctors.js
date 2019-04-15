@@ -2,11 +2,11 @@ const Doctor = require ('../models/doctor');
 
 module.exports={
     doctorssignup,
-    getDeptWiseDoctors
+    getDeptWiseDoctors,
+    getDoctor
 }
 
 async function doctorssignup(req, res){
-    console.log(req.body)
     const doctor = new Doctor(req.body);
     try{
         await doctor.save();
@@ -22,7 +22,6 @@ async function getDoctors(req,res){
         const doctors = await Doctor.find({})
         .sort({createdAt: -1})
         .limit(req.query.limit || 20);
-        console.log(doctors);
         res.json(doctors);
     } catch (err) {
         console.log(err)
@@ -30,18 +29,31 @@ async function getDoctors(req,res){
     }
 };
 
+async function getDoctor(req,res){
+    try{
+        await Doctor.findById(req.params.id,function(err,doctor){
+            console.log("line 37:",req.params.id + " | " + doctor)
+            res.json(doctor)
+        })
+        
+    } catch (err) {
+        console.log(err)
+        res.send(err)
+    }
+};
+
 async function getDeptWiseDoctors(req,res){
-    console.log(req.params.dept)
     try{
         const doctors = await Doctor.find({department:req.params.dept})
-        .sort({createdAt: -1})
-        .limit(req.query.limit || 20);
-        console.log(doctors);
+        // .sort({createdAt: -1})
+        // .limit(req.query.limit || 20);
         res.json(doctors);
     } catch (err) {
         console.log(err)
         res.send(err)
     }
 };
+
+
 
 

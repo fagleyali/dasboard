@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname,'build')));
 
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/doctors', require('./routes/api/doctors'));
+app.use('/api', require('./routes/api/appointments'));
 
 
 app.get('/*',function(req, res){
