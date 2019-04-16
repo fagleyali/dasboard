@@ -3,8 +3,11 @@ const Doctor = require ('../models/doctor');
 module.exports={
     doctorssignup,
     getDeptWiseDoctors,
-    getDoctor
+    getDoctor,
+    getDoctors
 }
+
+
 
 async function doctorssignup(req, res){
     const doctor = new Doctor(req.body);
