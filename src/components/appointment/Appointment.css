@@ -1,14 +1,55 @@
 .flex-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    margin: 15px;
 }
 
-.flex-container > div {
-    
-    width: 800px;
-    margin: 10px;
+  .row{
+      display: flex;
+      flex-direction: row;
+  }
+  .column{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background-color: lightskyblue;
+      margin: 10px;
+      height: 500px;
+      align-content: center;
+      border-radius: 5px;
+  }
+
+  .form-control{
+      width:100%;
+      overflow: hidden;
+      height: 50px;
+      font-size: medium;
+      margin: 10px auto;
+      line-height: 50px;
+  }
+
+  .form-control-calendar{
+    width:100%;
+    overflow: hidden;
+    font-size: medium;
+    margin: 10px auto;
+    color: #17A2b8;
+  }
+
+  .button {
+    background-color:lightgrey; /* Green */
+    border: none;
+    color: black;
     text-align: center;
-    line-height: 50px;
-    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-sizing:border-box;
+    width: 35%;
+    height:50px;
+  }
+
+  h3{
+    color: #17A2b8;
   }

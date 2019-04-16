@@ -8,7 +8,7 @@ import userService from './utils/userService';
 import LoginPage from './pages/LoginPage/LoginPage';
 import PrivateRoute from './components/PrivateRouter/PrivateRoute';
 import DoctorsSignupPage from './pages/DoctorsSignupPage/DoctorsSignupPage';
-import {SingleDatePicker} from 'react-dates';
+import NavBar  from './components/Navbar/navbar';
 import AppointmentSetup from './components/appointment/AppointmentSetup';
 import doctorService from './utils/doctorsService'
 
@@ -28,7 +28,8 @@ class App extends Component {
         patient:'',
         appointmentDate: '',
         slot:0
-      }
+      },
+      doctors: []
       
     }
   }
@@ -37,6 +38,8 @@ class App extends Component {
   async componentDidMount(){
     const user = await userService.getUser();
     this.setState({user})
+    console.log(this.getAllDoctors())
+    
   }
 
   handleSignupOrLogin = () => {
@@ -60,6 +63,13 @@ class App extends Component {
     
   }
 
+  getAllDoctors=()=>{
+    doctorService.index()
+    .then(doctors=>{
+      this.setState({doctors})
+    }).catch(err=>console.log(err))
+  }
+
   handleUpdateAppointment=(doctor,appointment)=>{
    this.setState({doctor})
     const newArr= this.state.appointment
@@ -73,9 +83,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-     
-      
+        <NavBar
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+          />
         <Switch>
           <Route exact path='/' render={({history})=>
             <AppointmentPage 
@@ -96,7 +107,7 @@ class App extends Component {
             />
           }>
           </Route>
-          <PrivateRoute user={this.state.user} exact path='/doctors' component={DoctorsPage} />
+          <PrivateRoute user={this.state.user} doctors={this.state.doctors} exact path='/doctors' component={DoctorsPage} />
           
           <Route user={this.state.user} exact path="/doctors/signup" render={({history})=>
           <DoctorsSignupPage 
@@ -116,13 +127,7 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-            
-
-            
-          
         </Switch>
-
-      
       </div>
     );
   }

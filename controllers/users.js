@@ -24,10 +24,11 @@ async function signup(req, res){
 }
 
 async function login(req, res){
+    console.log(req)
     
     try{
         const user=await User.findOne({email:req.body.email});
-        
+        console.log( "line 30: ", user + " " + SECRET)
         if(!user)return res.status(401).json({error:'bad credentials'});
         user.comparePassword(req.body.pw, (err,isMatch)=> {
             if (isMatch){

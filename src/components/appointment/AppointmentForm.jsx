@@ -124,60 +124,58 @@ class AppointmentForm extends React.Component{
     render(){
       const arr=this.timeLoop();
         return(
-            <div className="flex-container">
-                <h1>Appointment Form</h1>
-                <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          
+      <div className="flex-container">
+          <form  className="row" onSubmit={this.handleSubmit} >
+            <div className="column">
+              <h3>Selection Area</h3>
                 <div >
-                  <select className="form-control" value={this.props.department}  name="department" onChange={this.handleGetDoctors}>
+                  <select className="form-control"   value={this.props.department}  name="department" onChange={this.handleGetDoctors}>
                     <option value='' selected>Select Department</option>
                     <option value='Medicine'>Medicine</option>
                     <option value='Peditrician'>Peditrician</option>
                     <option value='CardioVascular Medicine' >Cardiovasculars Medicine</option>
                     <option value='Opthalmologist' >Opthalmologist</option>
-                </select>
+                  </select>
                 </div>
                 <div >
                   <select className="form-control"  name="doctor" onChange={this.handleChange} >
-                              <option value='' selected>Select Doctor</option>
+                    <option value='' selected>Select Doctor</option>
                     {this.state.doctors.map((d,key)=>{
                         return <option key={key} value={d._id}>{d.name}</option>
 
                     })}
                    </select>
                 </div>
-                <div>
+                <div className="form-control-calendar">
                     <Calendar handleAppDate={this.handleAppDate} />
-
-                  </div>
-                <div className="scheduleHour">
-                    <select className="form-control"  name="slot" onChange={this.handleChange} >
+                </div>
+              </div>
+            <div className="column">
+            <h3>Available Slot</h3>
+                <div>
+                    <select className="form-control" name="slot" onChange={this.handleChange} >
                     <option value='' selected>Select a slot</option>
                     {this.state.appDate ?
-                    (Object.keys(this.state.slots)).map((key,id)=>(
+                      (Object.keys(this.state.slots)).map((key,id)=>(
+                        !this.state.slots[key] &&
+                          <option value={key}>{arr[id]}</option>
 
-                      !this.state.slots[key] &&
-                        <option value={key}>{arr[id]}</option>
-
-                    ))
-                    :
-                    false
-                    }
-
+                        ))
+                      :
+                      false
+                      }
                     </select>
-                 
+                    </div>
+                  <div className="form-control">
+                    <button className="text-info"  disabled={this.isFormInvalid()}>Set Appointment</button>
+                    <Link className="text-info" to='/'>Cancel</Link>
                   </div>
-                  
-                  <div className="col-sm-12 text-center">
-              <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
-            </div>
-                  
+                </div>
+                <div className="column" >
+                <h3>Patient's History</h3>
+                </div>
               </form>
-
-              
-            </div>
-    
+          </div>
         )
     }
         

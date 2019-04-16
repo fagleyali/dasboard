@@ -6,18 +6,19 @@ export default {
   // index,
   create,
   getDoctors,
-  getDoctor
+  getDoctor,
+  index
 };
 
-// function index() {
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'Authorization': 'Bearer ' + tokenService.getToken()
-//     }
-//   };
-//   return fetch(BASE_URL, options).then(res => res.json());
-// }
+function index() {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + tokenService.getToken()
+    }
+  };
+  return fetch(BASE_URL, options).then(res => res.json());
+}
 
 function getDoctors(dept) {
   const options = {
