@@ -38,7 +38,7 @@ It actually help patients to get an appointment with his/her doctor online. Doct
 
 * [pitch-deck](https://github.com/fagleyali/dasboard)
 * [trello](https://trello.com/b/UEm5OT2v/das-board)
-* [Heroku](https://dasboard-ali/herokuapp.com)
+* [Heroku](https://dasboard-ali.herokuapp.com/login)
 
 ## RESTful_API
 
