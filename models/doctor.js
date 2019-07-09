@@ -3,10 +3,14 @@ const Department = require('./departments');
 
 const Schema = mongoose.Schema;
 
+
+
 const appointmentSchema = new Schema ({
     appointmentDate: Date,
-    patient: {type:Schema.Types.ObjectId, ref:'User'},
-    slot:Number 
+    appointmentDetails: [{
+        patient: {type:Schema.Types.ObjectId, ref:'User'},
+        slot:String  
+    }]
     
 })
 

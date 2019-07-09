@@ -25,8 +25,9 @@ class App extends Component {
     return{
       doctor: '',
       appointment:{
-        patient:'',
         appointmentDate: '',
+        patient:'',
+        
         slot:0
       },
       doctors: []
@@ -38,7 +39,7 @@ class App extends Component {
   async componentDidMount(){
     const user = await userService.getUser();
     this.setState({user})
-    console.log(this.getAllDoctors())
+    this.getAllDoctors()
     
   }
 
@@ -73,9 +74,11 @@ class App extends Component {
   handleUpdateAppointment=(doctor,appointment)=>{
    this.setState({doctor})
     const newArr= this.state.appointment
-    newArr.patient=appointment.patient
+    
+    newArr.patient=appointment.appointmentDetails[appointment.appointmentDetails.length-1].patient
     newArr.appointmentDate=appointment.appointmentDate
-    newArr.slot=appointment.slot
+    
+    newArr.slot=appointment.appointmentDetails[appointment.appointmentDetails.length-1].slot
     this.setState({appointment:newArr})
     
   }

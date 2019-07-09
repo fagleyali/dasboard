@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar  from '../Navbar/navbar';
+
 import {Link} from 'react-router-dom';
 
 
@@ -8,29 +8,55 @@ class AppointmentSetup extends React.Component {
         super(props)
     }
     render(){
-        console.log(this.props.doctor.name)
+        
         return (
             
-            <div>
+            <div className="tableStyle">
                 <h1>Appointment Setup</h1>
-                <NavBar
-                    user={this.props.user}
-                    handleLogout={this.props.handleLogout}
-                />
+                
 
                 { this.props.user._id===this.props.patient ?
                 <div>
-                <h4>{this.props.user.name}</h4>
-                <h4>{this.props.appointmentDate}</h4>
-                <h4>{this.props.slot}</h4>
-                <h4>{this.props.doctor.name}</h4>
+                    <table >
+                        
+                        <tbody>
+                            <tr>
+                                <td><h4>Patient:</h4> </td>
+                                <td><h4>{this.props.user.name}</h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Appointment Date:</h4></td>
+                                <td><h4>{this.props.appointmentDate}</h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Appointment Time:</h4></td>
+                                <td><h4>{this.props.slot}</h4></td>
+                            </tr>
+                            <tr>
+                                <td><h4>Doctor:</h4></td>
+                                <td><h4>{this.props.doctor.name}</h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                
 
                 </div>
                 :
                 false
                 
                 }
-                <Link to='/'>Ok</Link>
+                <table>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                    <Link to='/'>Ok</Link>
+
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
             </div>
             
         )

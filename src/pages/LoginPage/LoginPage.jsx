@@ -54,7 +54,7 @@ class LoginPage extends Component {
                                 
                             <div >
                                   <button className="text-info">Log In</button>&nbsp;&nbsp;&nbsp;
-                                  <Link to='/' className="text-info">Cancel</Link>
+                                  <Link to='/login' className="text-info">Cancel</Link>
                                   </div>
                             </div>
                             
