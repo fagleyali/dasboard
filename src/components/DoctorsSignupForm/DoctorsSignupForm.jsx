@@ -9,6 +9,7 @@ class DoctorsSignupForm extends Component {
         name: '',
         doctorId:'',
         department:'',
+        doctors:[]
       
 
     }
@@ -31,7 +32,9 @@ class DoctorsSignupForm extends Component {
       handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          await doctorsService.create(this.state);
+          await doctorsService.create(this.state)
+          .then(doctors=> console.log(doctors)
+          )
           this.props.history.push('/doctors');
           
         } catch (err) {

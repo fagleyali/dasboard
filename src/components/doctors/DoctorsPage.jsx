@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const DoctorsPage = props => {
     console.log(props.doctors)
+    
     return(
     <div>
         <h1>Doctors List</h1>
