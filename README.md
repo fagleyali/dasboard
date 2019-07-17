@@ -38,18 +38,19 @@ It actually help patients to get an appointment with his/her doctor online. Doct
 
 * [pitch-deck](https://github.com/fagleyali/dasboard)
 * [trello](https://trello.com/b/UEm5OT2v/das-board)
-* [Heroku](https://id.heroku.com/login)
+* [Heroku](https://dasboard-ali.herokuapp.com/login)
 
 ## RESTful_API
 
-RESTful API documentation.
+RESTful API documentation
+No RESTful Api is used.
 
 ## Project Challenges
-1. Time: Time is very short to build up a full stack web application by a group of new developers. 
-2. Github: Its getting on our nerves to resolve conflicts with .pyc. But learned a lot of these. 
-3. APIs: We searched for APIs to use, but didn't find any related things.
-4. Migrations: Model designing should be carefully crafted before starting coding.
-5. Heroku migrations: Another problem we found to migrate the modified model in the heroku. 
+
+1. AJAX: I faced a some difficulties sending and retrieving data from the bac kend.
+2. APIs: We searched for APIs to use, but didn't find any related things.
+3. User: User authentication is a little bit complex process due to it is based on token.
+4. Styling: I found difficulties in implementing css styles in the component level.
 
 ## Features
 This app has some cool features! Such as:
@@ -59,6 +60,12 @@ This app has some cool features! Such as:
 
 ## Futures
 There are a lot of thing we can do if we have some time
+1. I can consume third party API.
+2. I can implement socket.io for chat purpose between and patient and doctor.
+3. I can create a page for a doctor to see his patients for a particular day.
+4. I can create a list of patients with frequency of appointments so that a doctor can check on that. 
+5. I can add pictures of doctors to the list of doctors so that a patient can check and see his/her doctor.
+
 
 
 ## Setup
@@ -76,7 +83,7 @@ Describe how to install / setup your local environement / add link to demo versi
 * to deploy the completed project in Heroku
 
 ## Status
-Project is: pre project work just started. We are preparing the set up for the project, collecting accessories, images, apis. 
+Project is now completed.
 
 ## Inspiration
 Add here credits. Project inspired by #GENERAL ASSEMBLY#
