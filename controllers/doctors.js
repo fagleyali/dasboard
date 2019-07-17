@@ -3,14 +3,17 @@ const Doctor = require ('../models/doctor');
 module.exports={
     doctorssignup,
     getDeptWiseDoctors,
-    getDoctor
+    getDoctor,
+    getDoctors
 }
+
+
 
 async function doctorssignup(req, res){
     const doctor = new Doctor(req.body);
     try{
         await doctor.save();
-        getDoctors(req, res);
+        await getDoctors(req, res);
     }catch(err){
         console.log(err)
         res.status(400).json(err);
@@ -20,7 +23,7 @@ async function doctorssignup(req, res){
 async function getDoctors(req,res){
     try{
         const doctors = await Doctor.find({})
-        .sort({createdAt: -1})
+        .sort({department: 1, createdAt: -1})
         .limit(req.query.limit || 20);
         res.json(doctors);
     } catch (err) {

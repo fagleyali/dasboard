@@ -9,6 +9,7 @@ export default {
 
 
 function createAppointment(doctorId,appointment) {
+  console.log(doctorId + "|" + appointment)
     const options = {
       method: 'POST',
       headers: {
@@ -17,7 +18,9 @@ function createAppointment(doctorId,appointment) {
         'Authorization': 'Bearer ' + tokenService.getToken()
       },
       body: JSON.stringify(appointment)
+      
     };
+    
     return fetch(BASE_URL+ doctorId + '/appointment', options).then(res => res.json());
   }
 

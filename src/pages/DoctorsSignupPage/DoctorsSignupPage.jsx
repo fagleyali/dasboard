@@ -15,9 +15,7 @@ const DoctorsSignupPage = props => {
         <h1>Docotors Signup Page</h1>
         <DoctorsSignupForm 
         {...props} history={props.history}
-        // updateMessage={updateMessage}
-        // user={props.user}
-        // handleUpdateDoctor={props.handleUpdateDoctor}
+        
         /> 
     </div>
     )

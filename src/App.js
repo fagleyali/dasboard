@@ -8,7 +8,7 @@ import userService from './utils/userService';
 import LoginPage from './pages/LoginPage/LoginPage';
 import PrivateRoute from './components/PrivateRouter/PrivateRoute';
 import DoctorsSignupPage from './pages/DoctorsSignupPage/DoctorsSignupPage';
-import {SingleDatePicker} from 'react-dates';
+import NavBar  from './components/Navbar/navbar';
 import AppointmentSetup from './components/appointment/AppointmentSetup';
 import doctorService from './utils/doctorsService'
 
@@ -25,10 +25,12 @@ class App extends Component {
     return{
       doctor: '',
       appointment:{
-        patient:'',
         appointmentDate: '',
+        patient:'',
+        
         slot:0
-      }
+      },
+      doctors: []
       
     }
   }
@@ -37,6 +39,8 @@ class App extends Component {
   async componentDidMount(){
     const user = await userService.getUser();
     this.setState({user})
+    this.getAllDoctors()
+    
   }
 
   handleSignupOrLogin = () => {
@@ -49,6 +53,7 @@ class App extends Component {
   }
 
   handleUpdateDoctors = (doctors) => {
+    console.log('Line no: 56' + doctors)
     this.setState({ doctors });
   }
 
@@ -60,12 +65,21 @@ class App extends Component {
     
   }
 
+  getAllDoctors=()=>{
+    doctorService.index()
+    .then(doctors=>{
+      this.setState({doctors})
+    }).catch(err=>console.log(err))
+  }
+
   handleUpdateAppointment=(doctor,appointment)=>{
    this.setState({doctor})
     const newArr= this.state.appointment
-    newArr.patient=appointment.patient
+    
+    newArr.patient=appointment.appointmentDetails[appointment.appointmentDetails.length-1].patient
     newArr.appointmentDate=appointment.appointmentDate
-    newArr.slot=appointment.slot
+    
+    newArr.slot=appointment.appointmentDetails[appointment.appointmentDetails.length-1].slot
     this.setState({appointment:newArr})
     
   }
@@ -73,9 +87,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
-     
-      
+        <NavBar
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+          />
         <Switch>
           <Route exact path='/' render={({history})=>
             <AppointmentPage 
@@ -96,11 +111,13 @@ class App extends Component {
             />
           }>
           </Route>
-          <PrivateRoute user={this.state.user} exact path='/doctors' component={DoctorsPage} />
+          <PrivateRoute user={this.state.user} doctors={this.state.doctors} exact path='/doctors' component={DoctorsPage} />
           
           <Route user={this.state.user} exact path="/doctors/signup" render={({history})=>
           <DoctorsSignupPage 
-          history = {history}/>
+          history = {history}
+         handleUpdateDoctors={doctors=> this.handleUpdateDoctors(doctors)}
+          />
           }
           />
           <Route exact path='/signup' render={({history})=>
@@ -116,13 +133,7 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-            
-
-            
-          
         </Switch>
-
-      
       </div>
     );
   }

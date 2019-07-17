@@ -9,6 +9,7 @@ class DoctorsSignupForm extends Component {
         name: '',
         doctorId:'',
         department:'',
+        doctors:[]
       
 
     }
@@ -31,7 +32,10 @@ class DoctorsSignupForm extends Component {
       handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          await doctorsService.create(this.state);
+          await doctorsService.create(this.state)
+          .then(doctors=> this.props.handleUpdateDoctors(doctors)
+  
+          )
           this.props.history.push('/doctors');
           
         } catch (err) {
@@ -77,7 +81,7 @@ render() {
           <div className="form-group">
             <div className="col-sm-12 text-center">
               <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+              <Link to='/doctors'>Cancel</Link>
             </div>
           </div>
         </form>
