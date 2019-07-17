@@ -53,6 +53,7 @@ class App extends Component {
   }
 
   handleUpdateDoctors = (doctors) => {
+    console.log('Line no: 56' + doctors)
     this.setState({ doctors });
   }
 
@@ -114,7 +115,9 @@ class App extends Component {
           
           <Route user={this.state.user} exact path="/doctors/signup" render={({history})=>
           <DoctorsSignupPage 
-          history = {history}/>
+          history = {history}
+         handleUpdateDoctors={doctors=> this.handleUpdateDoctors(doctors)}
+          />
           }
           />
           <Route exact path='/signup' render={({history})=>
