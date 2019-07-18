@@ -8,10 +8,10 @@ const DoctorsPage = props => {
     return(
     <div >
         <h1>Doctors List</h1>
-            <div classname='container1'>
+            <div className = 'container1  flex-container'>
 
             {props.doctors.map((doctor,id)=> 
-            <div >
+            <div className = "flex-container-item">
                 <li className='card-body' key={id}>Name: {doctor.name} |
                  Department: {doctor.department}</li>
             </div>

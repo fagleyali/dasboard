@@ -52,27 +52,7 @@ class AppointmentForm extends React.Component{
       }
 
 
-      // handleAppDate=selectedDate=>{
-      //   console.log(selectedDate)
-      //   this.setState({appDate:selectedDate},()=>{
-      //     appointmentService.getSlots(this.state.doctor,this.state.appDate)
-      //     .then(slots=>{
-      //       console.log(slots )
-      //       if(slots.length===0) this.initializeSlots();
-      //       const newSlots = this.state.slots
-      //       Object.keys(newSlots).map(slot1=>{
-      //         slots.map(slot2=>{
-      //           if (slot1===slot2){
-                  
-      //             newSlots[slot1]=true;
-      //           }
-      //         }) 
-      //       })
-      //       this.setState({slots:newSlots})
-      //     })
-      //   .catch(err=> console.log(err))
-      // })
-      // }
+      
 
       handleAppDate=selectedDate=>{
         console.log(selectedDate)
@@ -132,7 +112,7 @@ class AppointmentForm extends React.Component{
     render(){
       
         return(
-      <div className="flex-container">
+      <div className="flex-container1">
           <form  className="row" onSubmit={this.handleSubmit} >
             <div className="column">
               <h3>Selection Area</h3>

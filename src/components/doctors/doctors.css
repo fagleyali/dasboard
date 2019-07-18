@@ -1,6 +1,17 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: column wrap;
-    justify-content: space-between;
+
+.flex-container {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important ;
+    margin: 20px;
+}
+.flex-container-item  {
+    border: 2px solid #dcdcdd;
+    padding: 20px;
+    max-width: 350px;
+    list-style-type: none;
+    margin: 10px 3px;
+    box-shadow: 2px 3px 0px blue;
+    text-decoration: underline;
+
 }
