@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bcrypt": "^3.0.5",
+    "bcrypt": "^5.0.0",
     "dateformat": "^3.0.3",
     "express": "^4.16.4",
     "fullcalendar-reactwrapper": "^1.0.7",
